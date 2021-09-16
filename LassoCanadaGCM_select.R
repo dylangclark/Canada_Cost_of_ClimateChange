@@ -26,11 +26,11 @@ library(ggplot2)
 
 
 # read netCDFs [needs to be a loop]
-netCDFdirectory<-"/Users/cccgi/Documents/GIS/GCMs/"
+netCDFdirectory<-"https://github.com/dylangclark/Canada_Cost_of_ClimateChange/edit/main/GCMs/"
 
 # read shapefile polygon for reagional boundaries
 AdminBound<-readOGR(dsn=boundaryFolder, layer = boundaryName)
-boundaryFolder<-"/Users/cccgi/Documents/GIS/CanMap/GCM AnalysisLayer/"
+boundaryFolder<-"https://github.com/dylangclark/Canada_Cost_of_ClimateChange/edit/main/"
 boundaryName<-"SimpleAdminArea"
 
 ####set netcdf variable
@@ -161,14 +161,14 @@ GCMTableFun<-function(gcmname,era,rcp,var){
 #################################################################################################   Run model with this:
 Out<-ClimatePlots(varPath = varPath,varName=varName,boundaryFolder = boundaryFolder,boundaryName = boundaryName,netCDFdirectory=netCDFdirectory)
 
-write.csv(Out,file="/Users/cccgi/Documents/GIS/temp.csv")
+write.csv(Out,file="/Users/cccgi/Documents/GCM_analysis_temp.csv")
 #Or
-write.csv(Out,file="/Users/cccgi/Documents/GIS/prcp.csv")
+write.csv(Out,file="/Users/cccgi/Documents/GCM_analysis_prcp.csv")
 
 
 
 
-#####Analysis of the data
+################################################################################################# Analysis of the data
 
 Data<-read.csv(file="/Users/cccgi/Documents/GIS/DataRaw.csv",header=T)
 
@@ -218,7 +218,7 @@ for (i in PT){
 }   
 
 
-write.csv(chullOut,file="/Users/cccgi/Documents/GIS/boundaries.csv")
+write.csv(chullOut,file="/Users/cccgi/Documents/GIS/convexHullOut.csv")
 
 remove(chullOut)
 
