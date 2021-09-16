@@ -1,4 +1,6 @@
 # Canada_Cost_of_ClimateChange
+Convex hull analysis of GCMs for Canada
+
 @Canadian-Institute-for-Climate-Choices background files and data
 
 INTRODUCTION
