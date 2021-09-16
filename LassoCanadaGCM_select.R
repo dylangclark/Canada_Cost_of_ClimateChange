@@ -99,6 +99,7 @@ ClimatePlots<-function(varPath,varName,boundaryFolder,boundaryName,netCDFdirecto
         if (check<0 | check>0){}else if(check==0){errorCondition(paste0("Error, Raster base has mean value of 0 ", gcm," ",Rcp," ",era))}
         
         ##Rast math (Rast - RastBase)
+          #We want the degree change for temperature and the % change for precipitaiton
         if (varName=="prcptot"){Delta<-overlay(Rast,RastBase,fun=function(r1,r2){return(r1/r2)})}
         else if (varName=="tg_mean"){Delta<-overlay(Rast,RastBase,fun=function(r1,r2){return(r1-r2)})}
         
